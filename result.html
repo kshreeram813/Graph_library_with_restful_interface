@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortest Path Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Shortest Path Result</h2>
+        <div class="result">
+            {% if result %}
+                {% if result.get('Message') %}
+                    <p class="message">{{ result['Message'] }}</p>
+                {% else %}
+                    <p class="path">{{ result['Path'] }}</p>
+                    <p class="distance">Distance: {{ result['Distance'] }}</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
