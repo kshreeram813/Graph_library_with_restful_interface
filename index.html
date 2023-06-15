@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortest Path Finder</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Shortest Path Finder</h1>
+        <form action="{{ url_for('shortest_path') }}" method="POST">
+            <label for="source">Source:</label>
+            <input type="text" id="source" name="source" required>
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+            <button type="submit">Find Shortest Path</button>
+        </form>
+    </div>
+</body>
+</html>
+
