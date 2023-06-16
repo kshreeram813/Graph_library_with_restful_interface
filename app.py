@@ -72,7 +72,7 @@ def shortest_path():
     if path == "Route Not Possible":
         return render_template('result.html', result={"Message": "Route not possible"})
     else:
-        return render_template('result.html', result={"Path": "->".join(path), "Distance": distance})
+        return render_template('result.html', result={"Path": "=>".join(path), "Distance": distance})
 
 def dijsktra(graph, initial, end):
     shortest_paths = {initial: (None, 0)}
@@ -111,3 +111,5 @@ def dijsktra(graph, initial, end):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
