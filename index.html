@@ -3,14 +3,25 @@
 <head>
     <title>Shortest Path Finder</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function validateInput() {
+            var sourceInput = document.getElementById("source").value;
+            var destinationInput = document.getElementById("destination").value;
+
+            if (!isNaN(sourceInput) || !isNaN(destinationInput)) {
+                alert("Invalid input! Please enter a valid source and destination.");
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Shortest Path Finder</h1>
-        <form action="{{ url_for('shortest_path') }}" method="POST">
-            <label for="source">Source:</label>
+        <h1 style="color:brown;">Shortest Path Finder</h1>
+        <form action="{{ url_for('shortest_path') }}" method="POST" onsubmit="return validateInput()">
+            <label style="color:blueviolet;" for="source">Source:</label>
             <input type="text" id="source" name="source" required>
-            <label for="destination">Destination:</label>
+            <label style="color:blueviolet;" for="destination">Destination:</label>
             <input type="text" id="destination" name="destination" required>
             <button type="submit">Find Shortest Path</button>
         </form>
