@@ -6,14 +6,14 @@
 </head>
 <body>
     <div class="container">
-        <h2>Shortest Path Result</h2>
+        <h2 style="color:blueviolet;"">Shortest Path Result</h2>
         <div class="result">
             {% if result %}
                 {% if result.get('Message') %}
                     <p class="message">{{ result['Message'] }}</p>
                 {% else %}
-                    <p class="path">{{ result['Path'] }}</p>
-                    <p class="distance">Distance: {{ result['Distance'] }}</p>
+                    <p style="color:red;" class="path">{{ result['Path'] }}</p>
+                    <p style="color:brown;" class="distance">Distance: {{ result['Distance'] }}</p>
                 {% endif %}
             {% endif %}
         </div>
