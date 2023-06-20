@@ -10,14 +10,25 @@
         <div class="result">
             {% if result %}
                 {% if result.get('Message') %}
-                    <p class="message">{{ result['Message'] }}</p>
+                       <!-- Display an error message if present -->
+                    <p style="color: red;">{{ result['Message'] }}</p>
                 {% else %}
-                    <p style="color:red; text-align: center;" class="path">{{ result['Path'] }}</p>
-                    <p style="color:brown; text-align: center;" class="distance">Distance: {{ result['Distance'] }}</p>
+                <!-- Display the shortest path -->
+                    <p>Path: {{ result['Path'] }}</p> 
+                    <!--Display the distance of the shortest path-->     
+                    <p>Distance: {{ result['Distance'] }}</p>    
                 {% endif %}
             {% endif %}
+        </div>
+        <div class="button-container">
+            <!-- Button to go back to the index page -->
+            <a href="{{ url_for('index') }}" class="button">Back</a>  
+           <!--Button to display the result from a file-->
+           <!-- <a href="{{ url_for('display_result') }}" class="button">Display Result from File</a> -->
         </div>
     </div>
 </body>
 </html>
+
+
 
