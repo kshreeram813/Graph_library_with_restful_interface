@@ -124,8 +124,8 @@ def display_result():
     return render_template('result.html', result=result_data)   # pass- data to reult.html page
 
 if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run(debug=True, host='2409:40f2:2e:71b3:b8ad:172e:4ac5:43cb', port=5000)
+    app.run(debug=True)
+    # app.run(debug=True, host='2409:40f2:2e:71b3:b8ad:172e:4ac5:43cb', port=5000)
 
 
 
