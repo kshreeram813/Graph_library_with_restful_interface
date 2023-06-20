@@ -5,11 +5,15 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <script>
         function validateInput() {
+            // Retrieve the values of the 'source' and 'destination' input fields
             var sourceInput = document.getElementById("source").value;
             var destinationInput = document.getElementById("destination").value;
 
+              // Check if either of the inputs is not a number (NaN)
             if (!isNaN(sourceInput) || !isNaN(destinationInput)) {
-                alert( "Invalid input!! Please enter a valid source and destination.");
+                // Display an alert with an error message
+                alert("Invalid input!! Please enter a valid source and destination.");
+                 // Return false to prevent the form submission
                 return false;
             }
         }
@@ -17,15 +21,19 @@
 </head>
 <body>
     <div class="container">
-        <h1 style="color:brown; text-align: center;">Shortest Path Finder:</h1>
+        <h1 style="color: brown; text-align: center;">Shortest Path Finder:</h1>
         <form action="{{ url_for('shortest_path') }}" method="POST" onsubmit="return validateInput()">
-            <label style="color:blueviolet;" for="source">Source:</label>
+            <label style="color: blueviolet;" for="source">Source:</label>
             <input type="text" id="source" name="source" style="border-radius: 20px; padding: 5px 10px; width: 150px; height: 25px;">
-            <label style="color:blueviolet;" for="destination">Destination:</label>
+            <label style="color: blueviolet;" for="destination">Destination:</label>
             <input type="text" id="destination" name="destination" style="border-radius: 20px; padding: 5px 10px; width: 150px; height: 25px;">
             <button type="submit">Find Shortest Path</button>
         </form>
     </div>
 </body>
-</html>
+</html> 
+
+
+
+
 
